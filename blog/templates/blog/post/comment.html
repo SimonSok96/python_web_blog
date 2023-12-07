@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Add a comment{% endblock %}
+
+{% block content %}
+{% if comment %}
+    <h1>Your comment has been added.</h1>
+    <p><a href="{{ post.get_absolute_url }}">Back to the post</a></p>
+{% else %}
+    {% include "blog/post/includes/comment_form.html" %}
+{% endif %}
+{% endblock content %}
